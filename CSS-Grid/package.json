@@ -1,0 +1,14 @@
+{
+  "name": "nexters_project",
+  "version": "1.0.0",
+  "description": "Mastering CSS Grid Layouts",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Nandan",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
