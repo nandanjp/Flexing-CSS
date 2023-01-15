@@ -1,0 +1,86 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem add-shadow($color-black, 0.2);
+    background-color: rgba($color-white, 60%);
+    border-radius: .3rem;
+    padding: 6rem; 
+    padding-left: 9rem; //Because the figure was translated 3rem
+    font-size: $default-font-size;
+    transform: skew(-12deg);
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+    }
+    @include respond(phone) {
+        padding: 4rem;
+        transform: skewX(0);
+    }
+
+    // & > * {
+    //     transform: skew(12deg);
+    // } doesn't work as their cannot be two different places where transform is applied (this case, shape has this applied anyways)
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+
+        
+        transform: translateX(-3rem) skew(12deg); //transform; best way to move floated objects
+        position: relative;
+        backface-visibility: hidden;
+        border-radius: 50%;
+        overflow: hidden;
+        
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            //Property allows text to wrap around a shape like the one specified
+            //The image does not have to actually by that shape
+            -webkit-shape-outside: circle(50% at 50% 50%); //50% of the width of the current element(must be specified in element) and at location (x, y)
+            shape-outside: circle(50% at 50% 50%); //Only works if dimensions are specified and element is floated
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+        @include respond(phone) {
+            transform: translateX(-3rem) skew(0);
+        }
+    }
+
+    &__img {
+        height: 100%; //Height is specified as the width is greater than height; thus want browser to auto scale
+        transform: translateX(-4rem) scale(1.4); //Try centering the lady
+        transition: all .5s;
+        @include respond(phone) {
+            transform: translateX(-3rem) skew(0);
+        }
+    }
+
+    &__text {
+        transform: skew(12deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        font-size: 1.7rem;
+        color: $color-white;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(.3rem) brightness(80%);
+    }
+} 

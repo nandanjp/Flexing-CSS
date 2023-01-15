@@ -1,0 +1,52 @@
+.row {
+    max-width: $grid-width; //This makes the grid adaptive: fill 100% when this width is not available
+    
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+    
+    //background-color: $color-grey-dark;
+    color: $color-black;
+    margin: 0 auto; //For centering: auto makes the left and right margin have same width
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical; //Apply to all elements except the one in not()
+    }
+    @include clearfix();
+
+    //Attribute Selectors: ^= (starts with), $= (ends with) *= (contains), all apply to class names specified
+    [class^="col-"] { //Select all attributes beginning with col-
+        //background-color: orangered;
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal; //the #{} is needed to use SASS variables
+
+            @include respond(tab-port) {
+                margin-right: 0 !important; //All columns get a width of 100%; each column on own row
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+        @include respond(tab-port) {
+            width: 100% !important; //All columns get a width of 100%; each column on own row
+        }
+    }
+    .col-1-of-2 {
+        width: calc( (100% - #{$gutter-horizontal}) / 2 );
+    }
+    .col-1-of-3 {
+        width: calc( (100% - #{$gutter-horizontal} * 2) / 3);
+    }
+    .col-2-of-3 {
+        width: calc( (100% - #{$gutter-horizontal} * 2) / 3 * 2 + #{$gutter-horizontal});
+    }
+
+    .col-1-of-4 {
+        width: calc( (100% - #{$gutter-horizontal} * 3) / 4 );
+    }
+
+    .col-2-of-4 {
+        width: calc( (100% - #{$gutter-horizontal} * 3) / 4 * 2 + #{$gutter-horizontal});
+    }
+}

@@ -1,0 +1,216 @@
+/*
+Note: to get devDependencies with npm; command is: npm install node-sass --save-dec
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/*First thing: reset default values
+  applied by browser: do this using the
+  universal selector*/
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /*All elements inherit this property from their parents*/
+    /*box-sizing changes box model
+    border-box: border and padding do 
+    not account for width and height of elements*/
+}
+
+/*In order to allow for easy px -> rem*/
+html {
+    font-size: 62.5%; /*Since rem applies to font properties and rem is based off of the root's font-size*/
+    /*Parent of html is the browser defaults*/
+}
+
+/*Typically, when setting font defaults,
+do it in the body as elements will inherit them:
+this is more efficient than setting them*/
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #777;
+    box-sizing: border-box;
+}
+
+/*Now setting the background image in header*/
+.header {
+    height: 95vh; /*The height of the footer is 95% of the view port height*/
+    background-image: linear-gradient(to right top,
+                    rgba(126, 213, 111, 0.8),
+                    rgba(40, 180, 133, 0.8)),
+                       url(../img/hero.jpg);
+    background-size: cover; /*Scales  image as large as possible without stretching. Cropped so no empty space remains.*/
+    background-position: top; /*Keeps the image's top portion constant; crops the bottom only when decreasing width*/
+    /*In order to clip an image, use clip-path property:
+        this property takes four coordinates, starting at the top-left, moving clockwise
+        all specified in the polygon() function
+    */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* num num = x, y coordinates respectively; 
+                                                       percentage is percentage width and height of element*/
+
+    position: relative; /*In order to enable absolute positioning of logo*/
+}
+/*Logo and Primary Text Styling*/
+.header__logo-box {
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+}
+
+#header__logo {
+    height: 3.5rem; /*Specifying height or width causes browser to find other value automatically*/
+}
+
+.header__text-box {
+    text-align: center;
+    position: absolute;
+    /*Center the text box*/
+    left: 50%;
+    top: 50%;
+    /*The trasnsforms above only apply to the top corner of the box
+    thus, the text will not be centered: it also is in relation to the parent element only
+    this can be fixed by translating the box itself
+    */
+    transform: translate(-50%, -45%); /*-50% = translate left, half of the width of the box
+                                        -45% = translate up 45% of the height of box*/                                        
+}
+.header-primary {
+    color: #ffffff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden; /*Fixes bugs in animations by making background element invisible*/
+}
+.header-primary--main {
+    display: block;
+    font-size: 5.6rem;
+    font-weight: 700;
+    letter-spacing: 3rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+
+    /* Other useful animation functions:
+        animation-delay: 1s;
+        animation-iteration-count: 1;
+    */
+    margin-bottom: 1rem;
+}
+.header-primary--sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1.75rem;
+    margin-bottom: 2.25rem;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+/*Animayion for headers*/
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-12rem);
+    }
+    75% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-12rem);
+    }
+    75% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(7.5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* The main button */
+/* A psuedo-class represents the state of an element:
+    styling elements in a special state*/
+.btn:link, /*link: when functioning as link, visited: when user has clicked on button before*/
+.btn:visited {
+    /*Psuedo classes are the same as the styling is the same for both states*/
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none; /*Removes the underline on links*/
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all 0.2s; /*Can choose which properties will be animated and the time of the animation
+                            transition can only be applied to an initial state:
+                            essentially, it animates a transition from one state to another*/
+    position: relative; /*to allow absolute positioning of btn::after button*/
+    backface-visibility: hidden;
+}
+.btn:hover { /*When hovering over element*/
+    transform: translateY(-0.4rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /*Offset-X, Offset-Y, Blur, color of shadow*/
+}
+.btn:active { /*When clicking element*/
+    transform: translateY(0rem);
+    box-shadow: 0 0.45rem, 0.5rem rgba(0, 0, 0, 0.2);
+}
+.btn--white {
+    background-color: white;
+    color: black;
+}
+/*btn::after: essentially creates a virtual button that can fade in and out*/
+.btn::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.6s;
+}
+.btn--white::after {
+    background-color: white;
+    color: black;
+}
+.btn:hover::after { /*Only apply this to the after button when hovering*/
+    transform: scaleX(1.4) scaleY(1.8);
+    opacity: 0; /*Transition occurs from opacity 100% to 0*/
+}
+.btn--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out; */
+    animation-fill-mode: backwards; /*Means the properties of 0% in the animation will be automatically applied on load*/
+}

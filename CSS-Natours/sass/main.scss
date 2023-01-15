@@ -1,0 +1,31 @@
+/*
+Note: to get devDependencies with npm; command is: npm install node-sass --save-dec
+When writing npm install on its own, all dependencies
+    listed in JSON will be added
+*/
+
+//Imports of other files
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/bg-video";
+@import "components/button";
+@import "components/card";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/form";
+@import "components/popup";
+@import "components/story";
+
+@import "layout/grid";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/navigation";
+
+@import "pages/home";

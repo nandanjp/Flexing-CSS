@@ -1,0 +1,186 @@
+.card {
+    //Functionality
+    perspective: 150rem; //Allows the card to come forward
+    -moz-perspective: 150rem; //To allow compatibility in firefox
+    position: relative;
+    height: 50rem;    //Otherwise, the height of the entire element will become 0 (due to absolute positioning
+
+    &__side {
+        height: 50rem;    
+
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden; //Remove the background of an element
+        border-radius: .3rem;
+        box-shadow: 0 1.5rem 4rem add-shadow($color-tertiary-light, 0.2); //Using the created function
+        overflow: hidden; //Hides overflowing of child element over parent
+
+        &--front {
+            transform: rotateY(0);
+        }
+        &--back { //The back side is just the front rotated 180 degrees
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+        }
+    }
+       
+
+    &:hover &__side--front { //Means when hovering over this card, transform &__side element
+        transform: rotateY(-180deg); //Only rotate if front side showing
+    }
+    &:hover &__side--back { 
+        transform: rotateY(0); //Rotate back to front side
+    }
+
+    //Front Side Styling
+    &__picture {
+        background-size: cover;
+        background-position: top;
+
+        //Blending the background and the image
+        background-blend-mode: lighten;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: .3rem; //This is done as the overflow: hidden; value is overriden with clip-path
+        border-top-right-radius: .3rem;
+        
+        height: 23rem;
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+                url(../img/nat-5.jpg);
+        }
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+                url(../img/nat-6.jpg);
+        }
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+                url(../img/nat-7.jpg);
+        }
+    }
+
+    &__heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+    }
+    &__heading--span {
+        padding: .7rem .5rem;
+        -webkit-box-decoration-break: clone; //Means that when a box breaks over multiple lines, styles will apply separately to each box
+        box-decoration-break: clone;
+
+        &-1 {
+            background-image: linear-gradient(to right top, 
+                apply-gradient($color-secondary-light, 0.85),
+                apply-gradient($color-secondary-light, 0.85));
+        }
+    }
+    &__details {
+        padding: 2.5rem;
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: .05rem solid $color-black;
+                }
+            }
+        }
+    }
+
+    //Back Side Styling
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    &__price {
+        &-box {
+            color: $color-white;
+            margin-bottom: 0;
+        }
+        &-only {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+        &-value {
+            font-size: 6rem;
+            font-weight: 100;
+        }
+    }
+
+    //@include respond(tab-port) {
+    @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) {
+        //Functionality
+        height: auto;    //Otherwise, the height of the entire element will become 0 (due to absolute positioning
+        border-radius: .3rem;
+        background-color: $color-white;
+        background-blend-mode: darken;
+        box-shadow: 0 1.5rem 4rem add-shadow($color-black, 0.2); //Using the created function
+
+        &__side {
+            height: auto;    
+            position: relative;
+            &--back { //The back side is just the front rotated 180 degrees
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+        
+
+        &:hover &__side--front { //Means when hovering over this card, transform &__side element
+            transform: rotateY(0); //Only rotate if front side showing
+        }
+        &__details {
+            padding: 1rem 3rem;
+        }
+        //Back Side Styling
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0%;
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 3rem 3rem;
+        }
+        &__price {
+            &-box {
+                color: $color-white;
+                margin-bottom: 3rem;
+            }
+            &-only {
+                font-size: 1.6rem;
+                text-transform: uppercase;
+            }
+            &-value {
+                font-size: 4rem;
+                font-weight: 100;
+            }
+        }
+    }
+}

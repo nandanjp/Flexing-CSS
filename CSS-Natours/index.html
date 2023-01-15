@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style-sass.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Natours | Exciting tours for adventurous people</title>
+    </head>
+    <body>
+        <!--Navigation bar-->
+        <div class="navigation">
+            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+            <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon"></span>
+            </label>
+            
+            <div class="navigation__background">&nbsp;</div> <!--&nbsp means blank space-->
+            
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#" class="navigation__link">About Us</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Your Benefits</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Goodbye Jojo</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <header class="header">
+            <div class="header__logo-box">
+                <img id="header__logo" src="img/logo-white.png" alt="logo image">
+            </div>
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main">Outdoors</span>
+                    <span class="heading-primary--sub">Is Where the Stardust Crusaders Are</span>
+                </h1>
+                <a href="#" class="btn btn--white btn--animated">Help them out</a> <!--# in href - refers to nothing-->
+            </div>
+        </header>
+
+        <main> <!--Main part of the webpage: contains most of the website-->
+            <section class="section-about">
+                <div class="u-center-text u-margin-bottom-lg"> <!--Utility class: has only one goal (this case, center text-->
+                    <h2 class="heading-secondary">
+                        “Good grief, don’t underestimate me just because I’m a kid.” – Jotaro Kujo  
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-1-of-2">
+                        <h3 class="heading-tertiary u-margin-bottom-sm">"Look, no one ever said Jotaro Kujo was a nice guy. 
+                            I beat the crap out of people, more than I have to. Some are even still in the hospital</h3>
+                        <p class="paragraph">"Good grief. You truly are the lowest scum in history. You can't pay back what you owe... with money!"</p>
+
+                        <h3 class="heading-tertiary u-margin-bottom-sm">"Look, no one ever said Jotaro Kujo was a nice guy. 
+                            I beat the crap out of people, more than I have to. Some are even still in the hospital</h3>
+                        <p class="paragraph">"Good grief. You truly are the lowest scum in history. You can't pay back what you owe... with money!"</p>
+
+                        <a href="#" class="btn-text">Learn More &rarr;</a> <!--&rarr = arrow in html-->  
+                    </div>
+                    <div class="col-1-of-2">
+                        <div class="composition">
+                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                                sizes="(max-width: 56.75em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                                alt="Photo 1"
+                                class="composition__photo composition__photo--p1"
+                                src="img/nat-1.jpg"
+                            >
+                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                                sizes="(max-width: 56.75em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                                alt="Photo 2"
+                                class="composition__photo composition__photo--p2"
+                                src="img/nat-2.jpg"
+                            >
+                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                                sizes="(max-width: 56.75em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                                alt="Photo31"
+                                class="composition__photo composition__photo--p3"
+                                src="img/nat-3.jpg"
+                            >
+                            <!--
+                            <img src="img/nat-1.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                            <img src="img/nat-2.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                            <img src="img/nat-3.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-features">
+                <div class="row">
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box__icon">Some Text</i>
+                            <h3 class="heading-tertiary">"Yes, yes, yes, oh my god!"</h3>
+                            <p class="feature-box__text">One last all-or-nothing gambit! (...) Yeah! It's my final move! (...) Listen up!
+                                This is something you're going to have to do for yourself! (...)
+                                Hmmmm.... RUN FOR YOUR LIIIIIIIVES!</p>
+                        </div>
+                    </div>
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box__icon">Some Text</i>
+                            <h3 class="heading-tertiary">"Yes, yes, yes, oh my god!"</h3>
+                            <p class="feature-box__text">One last all-or-nothing gambit! (...) Yeah! It's my final move! (...) Listen up!
+                                This is something you're going to have to do for yourself! (...)
+                                Hmmmm.... RUN FOR YOUR LIIIIIIIVES!</p>
+                        </div>
+                    </div>
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box__icon">Some Text</i>
+                            <h3 class="heading-tertiary">"Yes, yes, yes, oh my god!"</h3>
+                            <p class="feature-box__text">One last all-or-nothing gambit! (...) Yeah! It's my final move! (...) Listen up!
+                                This is something you're going to have to do for yourself! (...)
+                                Hmmmm.... RUN FOR YOUR LIIIIIIIVES!</p>
+                        </div>
+                    </div>
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box__icon">Some Text</i>
+                            <h3 class="heading-tertiary">"Yes, yes, yes, oh my god!"</h3>
+                            <p class="feature-box__text">One last all-or-nothing gambit! (...) Yeah! It's my final move! (...) Listen up!
+                                This is something you're going to have to do for yourself! (...)
+                                Hmmmm.... RUN FOR YOUR LIIIIIIIVES!</p>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+
+            <section class="section-tours">
+                <div class="u-center-text u-margin-bottom-lg"> <!--Utility class: has only one goal (this case, center text-->
+                    <h2 class="heading-secondary">
+                        “Good grief, don’t underestimate me just because I’m a kid.” – Jotaro Kujo  
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card__side card__side--front">
+                                <div class="card__picture card__picture--1">
+                                    &nbsp;
+                                </div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading--span card__heading--span-1">
+                                        Darby Gamer
+                                    </span>
+                                </h4>
+                                <div class="card__details">
+                                    <ul>
+                                        <li>Oh that's a baseball</li>
+                                        <li>F-Mega</li>
+                                        <li>Serect your Car</li>
+                                        <li>Jaggers</li>
+                                        <li>Red Draegon</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card__side card__side--back card__side--back-1">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">Only</p>
+                                        <p class="card__price-value">0</p>
+                                    </div>
+                                    <a href="#popup" class="btn btn--white">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card__side card__side--front">
+                                <div class="card__picture card__picture--2">
+                                    &nbsp;
+                                </div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading--span card__heading--span-2">
+                                        Darby Gamer
+                                    </span>
+                                </h4>
+                                <div class="card__details">
+                                    <ul>
+                                        <li>Oh that's a baseball</li>
+                                        <li>F-Mega</li>
+                                        <li>Serect your Car</li>
+                                        <li>Jaggers</li>
+                                        <li>Red Draegon</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card__side card__side--back card__side--back-2">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">Only</p>
+                                        <p class="card__price-value">297</p>
+                                    </div>
+                                    <a href="#popup" class="btn btn--white">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card__side card__side--front">
+                                <div class="card__picture card__picture--3">
+                                    &nbsp;
+                                </div>
+                                <h4 class="card__heading">
+                                    <span class="card__heading--span card__heading--span-3">
+                                        Darby Gamer
+                                    </span>
+                                </h4>
+                                <div class="card__details">
+                                    <ul>
+                                        <li>Oh that's a baseball</li>
+                                        <li>F-Mega</li>
+                                        <li>Serect your Car</li>
+                                        <li>Jaggers</li>
+                                        <li>Red Draegon</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card__side card__side--back card__side--back-3">
+                                <div class="card__cta">
+                                    <div class="card__price-box">
+                                        <p class="card__price-only">Only</p>
+                                        <p class="card__price-value">1000</p>
+                                    </div>
+                                    <a href="#popup" class="btn btn--white">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="u-center-text u-margin-top-bg"> <!--Utility class: has only one goal (this case, center text-->
+                    <a href="#" class="btn btn--green-dark">Discover Are Jojos</a>
+                </div>
+
+            </section>
+            <section class="section-stories">
+                <div class="bg-video">
+                    <video class="bg-video__content" autoplay muted loop> <!--Set on autoplay, audio muted and looping-->
+                        <source src="img/video.mp4" type="video/mp4">
+                        <source src="img/video.webm" type="video/webm">
+                        Your Browser is not Supported
+                    </video>
+                </div>
+                <div class="u-center-text u-margin-bottom-lg"> <!--Utility class: has only one goal (this case, center text-->
+                    <h2 class="heading-secondary">
+                        “Good grief, don’t underestimate me just because I’m a kid.” – Jotaro Kujo  
+                    </h2>
+                </div>
+
+                <div class="row">
+                    <div class="story">
+                        <figure class="story__shape .u-margin-bottom-sm"> <!--Figure: allows an image to be put with a caption-->
+                            <img src="../img/nat-8.jpg" alt="Person on Tour" class="story__img">
+                            <figcaption class="story__caption">
+                                Kujo Jotaro
+                            </figcaption>
+                        </figure>
+                        <h3 class="heading__tertiary">OraOraOraOraOraOraOra</h3>
+                        <p class="story__text">Ho… mukatta kuruno ka? Nigetsu ni kono DIO ni chikazuite kuruno ka?
+                            Sekkaku sofu no Josefu ga watashi no Za Warudo no shotai wo. Shiken shuryu 
+                            chaimu chokuzen made mondai yo toitte iru jukensee ne you na? Kisshi koita
+                             kibun de wo shietekure ta to yuu no ni?
+                       </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="story">
+                        <figure class="story__shape .u-margin-bottom-sm"> <!--Figure: allows an image to be put with a caption-->
+                            <img src="../img/nat-9.jpg" alt="Person on Tour" class="story__img">
+                            <figcaption class="story__caption">
+                                Kujo Jotaro
+                            </figcaption>
+                        </figure>
+                        <h3 class="heading__tertiary">OraOraOraOraOraOraOra</h3>
+                        <p class="story__text">Ho… mukatta kuruno ka? Nigetsu ni kono DIO ni chikazuite kuruno ka?
+                            Sekkaku sofu no Josefu ga watashi no Za Warudo no shotai wo. Shiken shuryu 
+                            chaimu chokuzen made mondai yo toitte iru jukensee ne you na? Kisshi koita
+                             kibun de wo shietekure ta to yuu no ni?
+                       </p>
+                    </div>
+                </div>  
+                <a href="#" class="btn-text u-center-text">Read All Stories &rarr;</a> <!--&rarr = arrow in html-->
+            </section>
+            <section class="section-book">
+                <div class="row">
+                    <div class="book">
+                        <div class="book__form">
+                            <form action="#" class="form">
+                                <div class="u-center-text u-margin-bottom-lg"> <!--Utility class: has only one goal (this case, center text-->
+                                    <h2 class="heading-secondary">
+                                        “Good grief.” – Jotaro Kujo  
+                                    </h2>
+                                </div>
+                                <div class="form__group">
+                                    <input type="text" class="form__input" placeholder="Full Name" id="name" required>
+                                    <label for="name" class="form__label">Full Name</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" class="form__input" placeholder="Email Address" id="email_label" required>
+                                    <label for="email_label" class="form__label">Email Address</label>
+                                </div>
+
+                                <div class="form__group">
+                                    <div class="form__radio-group">
+                                        <input type="radio" class="form__radio-input" id="small" name="group"> <!--If same name, only one of the buttons can be chosen-->
+                                        <label for="small" class="form__radio-label">
+                                            <span class="form__radio-button"></span> <!--Since radio buttons cannot be styled, make it so that when this label is clicked, the styled span appears-->
+                                            Small Group
+                                        </label>
+                                    </div>
+                                    <div class="form__radio-group">
+                                        <input type="radio" class="form__radio-input" id="large" name="group">
+                                        <label for="large" class="form__radio-label">
+                                            <span class="form__radio-button"></span>
+                                            Large Group
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form_group">
+                                    <button class="btn btn--green-dark u-margin-top-med u-margin-bottom-sm">Next Step &rarr;</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__logo-box">
+                <picture class="footer__logo">
+                    <!--Use the first source if the webpage conforms to the media attribute
+                        Otherwise, choose the one below: this is art direction (changing image based on webpage) -->
+                    <source srcset="img/logo-green-small-1x.png 150w, img/logo-green-small-2x.png 300w" media="(max-width: 37.5em)">
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" sizes="(max-width: 37.5em)" alt="Full Logo" src="img/logo-green-2x.png" class="footer__logo">
+                </picture>
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1-of-2">
+                    <p class="footer__copyright">
+                        <p class="footer__copyright">
+                            Built by <a href="#" class="footer__link">Kujo Jotaro</a> for his pitch for help against <a href="#" class="footer__link">Dio Brando</a>.
+                            Copyright &copy; The More Carefully You Scheme, The More Unexpected Events Come Along. Wryyyyy!
+                            Muda! Muda! Muda! Muda! Muda! Road Roller Da! Za Warudo!
+                        </p>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <a href="#section-tours" class="popup__close">x</a>
+                <div class="popup__left">
+                    <img src="img/nat-8.jpg" alt="Tour photot" class="popup__img">
+                    <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <h2 class="heading-secondary">"Your next line is...!" - Joseph</h2>
+                    <h2 class="heading-tertiary">"Nice watch. Too bad you won't be able to tell the time after I break it. 
+                                                    Break your face that is.</h2>
+                    <p class="popup__text">
+                        DIO: I've already taken care of Kakyoin, too.
+                        DIO: Polnareff must be hiding somewhere... Hah. But it doesn't matter.
+                        DIO: You're next, Jotaro!
+                        JOTARO: You bastard. DIO!
+                        DIO: Oh? You're approaching me? Instead of running away, you're coming right to me?
+                        Even Though your grandfather, Joseph, told you the secret of The World, *dead Joseph pics*
+                        like an exam student scrambling to finish the problems on an exam until the last moments
+                        before the chime?
+                    </p>
+                    <a href="#" class="btn btn--green-dark">Apply Now</a> 
+                </div>
+            </div>
+        </div>
+
+    <!-- CSS Flost Grids Example
+        <section class="grid-test">
+            <div class="row">
+                <div class="col-1-of-2">
+                    Col-1-of-2
+                </div>
+                <div class="col-1-of-2">
+                    Col-2-of-2
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-of-3">
+                    Col-1-of-3
+                </div>
+                <div class="col-1-of-3">
+                    Col-2-of-3
+                </div>
+                <div class="col-1-of-3">
+                    Col-3-of-3
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-of-3">
+                    Col-1-of-3
+                </div>
+                <div class="col-2-of-3"> Two parts of 3 column grid 
+                    Col-2-of-3
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-of-4">
+                    Col-1-of-4
+                </div>
+                <div class="col-1-of-4">
+                    Col-2-of-4
+                </div>
+                <div class="col-1-of-4">
+                    Col-3-of-4
+                </div>
+                <div class="col-1-of-4">
+                    Col-4-of-4
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-of-4">
+                    Col-1-of-4
+                </div>
+                <div class="col-1-of-4">
+                    Col-2-of-4
+                </div>
+                <div class="col-2-of-4">
+                    Col-3-of-4
+                </div>
+            </div>
+        </section>
+    -->
+    </body>
+</html>

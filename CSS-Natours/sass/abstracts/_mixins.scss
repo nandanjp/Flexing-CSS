@@ -1,0 +1,82 @@
+@mixin btn-active-prop {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.6s;
+}
+
+@mixin clearfix {
+    &::after {
+        content: ""; //Needed to make after element appear
+        display: table;
+        clear: both; //Clear both float left and right
+    }
+};
+
+@mixin center_horizontal_vertical($pos) {
+    position: $pos;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+};
+
+//MEDIA QUERY MANAGER
+/*
+    0 - 600px:    Phone
+  600 - 900px:    Phone
+   0 - 1200px:    Phone
+[1200 - 1800]:    Phone
+     > 1800px:    Phone
+*/
+
+/* @content;
+    instead of taking parameters, when the mixin
+    is called, it can take a block of declarations
+    which becomes the content of the mixin*/
+@mixin respond_phone {
+    @media only screen and (max-width: 600px) {
+        @content
+    }
+};
+
+//Creating a General responding mixin
+/* Breakpoint Options:
+    phone
+    tab-port
+    tab-land
+    big-desktop
+
+    1em = 16px: need to use em as the default page font does not affect media queries
+
+    ORDER OF ADDING MEDIA QUERIES (GENERAL PATTERN):
+
+    Base + typography > gneral layout + grid > page layout > components 
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 27.5em) { //only screen: only applies to screen, not to print
+            @content
+        }
+    };
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+    };
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) {
+            @content
+        }
+    };
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content
+        }
+    };
+}

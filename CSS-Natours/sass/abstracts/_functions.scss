@@ -1,0 +1,6 @@
+@function add-shadow($color, $opacity) {
+    @return rgba($color, $opacity)
+};
+@function apply-gradient($color, $opacity) {
+    @return rgba($color, $opacity)
+};
